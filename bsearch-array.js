@@ -4,8 +4,8 @@
 
 var buildArray = function(range){
 	var i, ival ;
-	vae list = new Array();
-	for (i = 0; i < 100; i++){
+	var list = new Array();
+	for (i = 0; i < range; i++){
 		var ival = Math.floor(Math.random()*256);
 		list[i] = ival;
 	}
@@ -38,7 +38,7 @@ var doSearch = function(array, targetValue) {
 }
 //main (this is where the functions get called)
 
-var thelist = buildArray();
+var thelist = buildArray(65536);
 console.log("Before Search");
 console.log(thelist);
 thelist.sort(function(a, b){return a-b});
@@ -47,5 +47,5 @@ console.log("After Search");
 console.log(thelist);
 console.log("***************************");
 var searchValue = Math.floor(Math.random()*256);
-var result + doSearch(thelist, searchValue);
-console.log("Found value" +searchValue+ "at index" +result);
+var result = doSearch(thelist, searchValue);
+console.log("Found value " +searchValue+ " at index " +result);
